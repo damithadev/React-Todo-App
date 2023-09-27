@@ -2,21 +2,14 @@ import React from "react";
 import { useState } from "react";
 import Header from "./header";
 import Footer from "./footer";
+import Body from "./body";
 
 function App() {
-  const [name, setName] = useState("damitha");
-
-  const changeName = () => {
-    setName("Jay");
-  };
-
   return (
     <div className="App">
       <Header />
-      <button onClick={changeName}>Click </button>
-      <p>
-        Hello <b>{name}</b>
-      </p>
+      <Body />
+
       <Footer />
     </div>
   );

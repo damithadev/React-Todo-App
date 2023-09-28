@@ -26,6 +26,7 @@ const Body = () => {
       item.id === id ? { ...item, checked: !item.checked } : item
     );
     setItems(listItems);
+    localStorage.setItem("taskList", JSON.stringify(listItems));
   };
 
   return (
@@ -38,7 +39,12 @@ const Body = () => {
               checked={item.checked}
               onChange={() => handleCheck(item.id)}
             />
-            <label>{item.item}</label>
+            <label
+              style={item.checked ? { textDecoration: "line-through" } : null}
+              onDoubleClick={() => handleCheck(item.id)}
+            >
+              {item.item}
+            </label>
             <FaTrashAlt role="button" tabIndex="0" />
           </li>
         ))}

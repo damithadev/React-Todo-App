@@ -20,7 +20,7 @@ const Body = ({ items, handleCheck, handleDelete }) => {
           }}
         >
           Your task list is empty. {<br />}Time to add some tasks and stay
-          productive
+          productive.
         </p>
       )}
     </div>

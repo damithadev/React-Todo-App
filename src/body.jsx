@@ -29,6 +29,12 @@ const Body = () => {
     localStorage.setItem("taskList", JSON.stringify(listItems));
   };
 
+  const handleDelete = (id) => {
+    const listItems = items.filter((item) => item.id !== id);
+    setItems(listItems);
+    localStorage.setItem("taskList", JSON.stringify(listItems));
+  };
+
   return (
     <div className="Body">
       <ul>
@@ -45,7 +51,11 @@ const Body = () => {
             >
               {item.item}
             </label>
-            <FaTrashAlt role="button" tabIndex="0" />
+            <FaTrashAlt
+              role="button"
+              tabIndex="0"
+              onClick={() => handleDelete(item.id)}
+            />
           </li>
         ))}
       </ul>

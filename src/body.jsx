@@ -37,28 +37,35 @@ const Body = () => {
 
   return (
     <div className="Body">
-      <ul>
-        {items.map((item) => (
-          <li className="item" key={item.id}>
-            <input
-              type="checkbox"
-              checked={item.checked}
-              onChange={() => handleCheck(item.id)}
-            />
-            <label
-              style={item.checked ? { textDecoration: "line-through" } : null}
-              onDoubleClick={() => handleCheck(item.id)}
-            >
-              {item.item}
-            </label>
-            <FaTrashAlt
-              role="button"
-              tabIndex="0"
-              onClick={() => handleDelete(item.id)}
-            />
-          </li>
-        ))}
-      </ul>
+      {items.length ? (
+        <ul>
+          {items.map((item) => (
+            <li className="item" key={item.id}>
+              <input
+                type="checkbox"
+                checked={item.checked}
+                onChange={() => handleCheck(item.id)}
+              />
+              <label
+                style={item.checked ? { textDecoration: "line-through" } : null}
+                onDoubleClick={() => handleCheck(item.id)}
+              >
+                {item.item}
+              </label>
+              <FaTrashAlt
+                role="button"
+                tabIndex="0"
+                onClick={() => handleDelete(item.id)}
+              />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p style={{ fontSize: "17px", textAlign: "center" }}>
+          Your task list is empty. {<br />}Time to add some tasks and stay
+          productive
+        </p>
+      )}
     </div>
   );
 };

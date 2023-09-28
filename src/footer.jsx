@@ -1,7 +1,13 @@
 import React from "react";
 
-const Footer = () => {
-  return <footer> © damitha.dev</footer>;
+const Footer = ({ length }) => {
+  return (
+    <footer>
+      <p style={{ fontSize: "17px" }}>
+        You have {length} {length === 1 ? "task" : "tasks"} to do.
+      </p>
+    </footer>
+  );
 };
 
 export default Footer;

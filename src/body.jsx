@@ -1,40 +1,7 @@
 import React from "react";
-import { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
 
-const Body = () => {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      checked: false,
-      item: "one half pound bag of cocoa",
-    },
-    {
-      id: 2,
-      checked: false,
-      item: "bread",
-    },
-    {
-      id: 3,
-      checked: false,
-      item: "pizza",
-    },
-  ]);
-
-  const handleCheck = (id) => {
-    const listItems = items.map((item) =>
-      item.id === id ? { ...item, checked: !item.checked } : item
-    );
-    setItems(listItems);
-    localStorage.setItem("taskList", JSON.stringify(listItems));
-  };
-
-  const handleDelete = (id) => {
-    const listItems = items.filter((item) => item.id !== id);
-    setItems(listItems);
-    localStorage.setItem("taskList", JSON.stringify(listItems));
-  };
-
+const Body = ({ items, handleCheck, handleDelete }) => {
   return (
     <div className="Body">
       {items.length ? (
@@ -61,7 +28,13 @@ const Body = () => {
           ))}
         </ul>
       ) : (
-        <p style={{ fontSize: "17px", textAlign: "center" }}>
+        <p
+          style={{
+            marginTop: "10rem",
+            fontSize: "17px",
+            textAlign: "center",
+          }}
+        >
           Your task list is empty. {<br />}Time to add some tasks and stay
           productive
         </p>

@@ -6,9 +6,10 @@ import Body from "./body";
 import Footer from "./footer";
 
 function App() {
-  const [items, setItems] = useState(
-    JSON.parse(localStorage.getItem("taskList"))
-  );
+  const [items, setItems] = useState(() => {
+    const storedItems = JSON.parse(localStorage.getItem("taskList"));
+    return storedItems || []; // If no items are in localStorage, initialize as an empty array
+  });
 
   const [newItem, setNewItem] = useState("");
 

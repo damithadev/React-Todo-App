@@ -29,7 +29,8 @@
     height: 100vh; 
     width: 100%; 
     max-width: 500px;
-    border: 1px solid #1d3557;
+    border: 5px solid #1d3557;
+    border-radius: 10px;
     margin: auto;
   }
 

@@ -18,7 +18,8 @@
     display: flex; /* Use flex container for the entire body */
     /* flex-direction: column; */
     justify-content: center;
-   
+    margin: 0;
+    padding: 0;
    
 }
   

@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="To-do App" />
+      <Header title="ZenDo" />
       <AddItem
         newItem={newItem}
         setNewItem={setNewItem}

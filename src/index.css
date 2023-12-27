@@ -33,7 +33,7 @@
     /* min-height: 100%;  */
     width: 100%; 
     min-width: 100vw;
-    border: 5px solid #1d3557;
+    border: 5px solid #000000;
     margin: auto;
   }
 
@@ -41,8 +41,8 @@ header {
     height: 35px;
     width: 100%;
     padding: 0 0.25em;
-    background-color: #1d3557;
-    color: aliceblue;
+    background-color: #000000;
+    color: #FFFF00;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,14 +50,15 @@ header {
     font-size: 25px;
     font-weight: 600;
   }
-  
+  /* #1d3557 */
+
 footer {
     font-size: 18px;
     height: 35px;
     width: 100%;
     padding: 0 0.25em;
-    background-color: #1d3557;
-    color: aliceblue;
+    background-color: #000000;
+    color: #FFFF00;
     display: flex;
     justify-content: center;
     align-items: center;
